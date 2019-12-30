@@ -1,4 +1,4 @@
-package hendle
+package handle
 
 import (
 	"fmt"
