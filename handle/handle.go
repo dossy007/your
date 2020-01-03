@@ -1,11 +1,14 @@
 package handle
 
 import (
-	"fmt"
 	"net/http"
+	"text/template"
 )
 
 func Showindex(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprintf(w, "Helloopopop, World")
+	tem, _ := template.ParseFiles("index.html")
 
+	v := 1
+	tem.Execute(w, v)
+	//execute is template to act and http.RequestWriter に書き出す
 }
