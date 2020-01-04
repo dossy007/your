@@ -4,27 +4,62 @@
   <meta charset="utf-8">
   <title></title>
   <link rel="stylesheet" type="text/css" href="stylesheet/index.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+  <script src="stylesheet/modal.js"></script>
+<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
   </head>
 
   <body>
     <wrapper>
       <header>
-       <div class="head-image">
-          <img src="https://prtimes.jp/i/49152/1/resize/d49152-1-862677-0.png" class="image"></img>
-        </div>
-      </header>
+        <div class="head-image">
+              <div>
+                <img src="https://livedoor.blogimg.jp/yuuaugust5/imgs/7/1/712a700f.jpg" class="image autoplay"></img>
+              </div>
+              <div>
+                <img src="https://prtimes.jp/i/49152/1/resize/d49152-1-862677-0.png" class="image autoplay" ></img>
+              </div>
+              <div>
+                <img src="stylesheet/rabbit1.jpg" class="image autoplay"></img>
+              </div>
+              <img src="https://livedoor.blogimg.jp/yuuaugust5/imgs/2/7/27794412.jpg"></img>
+             </div>
+       </header>
+ 
       <content>
         <div class="main">
           <div class="main-up"></div>
           <div class="movie-box">
             <div class="left-content">
-              <span class="text">胸</span>
+              <span class="text"></span>
             </div>
             <div class="right-content">
-              動画一覧
-              <div class="youtube-box">a</div>
-              <div class="youtube-box">b</div>
-              <div class="youtube-box"></div>
+              <div class="youtube-box">
+                <button type="button" class="btn btn-primary video" data-toggle="modal" data-target="#exampleModal" data-video="https://www.youtube.com/embed/_3W5C3bTbUA">
+                  <img src="/stylesheet/play.png" height="60px" width="60px" class="play">
+                  <a type="button" href="https://www.youtube.com/embed/_3W5C3bTbUA" data-video="https://www.youtube.com/embed/_3W5C3bTbUA" data-toggle="modal" data-target="#videoModal" class="youtube-link">
+                    <img src="http://img.youtube.com/vi/_3W5C3bTbUA/hqdefault.jpg" class="youtube-box-image"></img>
+                  </a>
+                </button>
+              </div>
+              <div class="youtube-box">
+                <button type="button" class="btn btn-primary video" data-toggle="modal" data-target="#exampleModal" data-video="https://www.youtube.com/embed/GkqhHEAy1zw">
+                  <img src="/stylesheet/play.png" height="60px" width="60px" class="play">
+                  <a type="button" href="https://www.youtube.com/embed/GkqhHEAy1zw" data-video="https://www.youtube.com/embed/GkqhHEAy1zw" data-toggle="modal" data-target="#videoModal" class="youtube-link">
+                    <img src="http://img.youtube.com/vi/GkqhHEAy1zw/hqdefault.jpg" class="youtube-box-image"></img>
+                  </a>
+                </button>
+              </div>
+              <div class="youtube-box">
+                <button type="button" class="btn btn-primary video" data-toggle="modal" data-target="#exampleModal" data-video="https://www.youtube.com/embed/mY3FOwwKGzI">
+                  <img src="/stylesheet/play.png" height="60px" width="60px" class="play">
+                  <a type="button" href="https://www.youtube.com/embed/mY3FOwwKGzI" data-video="https://www.youtube.com/embed/mY3FOwwKGzI" data-toggle="modal" data-target="#videoModal" class="youtube-link">
+                    <img src="http://img.youtube.com/vi/mY3FOwwKGzI/hqdefault.jpg" class="youtube-box-image"></img>
+                  </a>
+                </button>
+              </div>
             </div>
           </div>
           </div>
@@ -32,3 +67,17 @@
     </wrapper>
   </body>
   </html>
+
+<!-- modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        <div class="embed-responsive embed-responsive-16by9">
+          <iframe width="100%" height="500" frameborder="0" allowfullscreen></iframe>
+      </div>
+      <div class="modal-footer">
+      </div>
+    </div>
+  </div>
+</div>
