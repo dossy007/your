@@ -34,23 +34,30 @@ wrapper {
   margin: auto;
 }
 
-.left-content{
-  position:relative;
-  width: 20%;
-}
-
-.text {
-  position: absolute;
-    top: 4px;
-    left: 34%;
-  
-}
 
 .right-content{
+  margin:auto;
   display:flex;
-  background-color: lightgreen;
-  width:80%;
+  background-color: white;
+  width:90%;
 }
 .youtube-box {
   width: 33%;
+  position: relative;
+}
+.youtube-link {
+  width:100px;
+}
+.youtube-box-image {
+  height:100%;
+  width:100%;
+}
+.play {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  top:0;
+  bottom: 0;
+  z-index:1;
 }
