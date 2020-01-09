@@ -1,8 +1,8 @@
 package main
 
 import (
-	// "github.com/dossy007/your/handle"
-	"./handle"
+	"github.com/dossy007/your/handle"
+	// "./handle"
 	"net/http"
 )
 
