@@ -34,38 +34,26 @@
  
       <content>
         <div class="main">
-          <div class="main-up"></div>
+          {{ range .}}
+          <div class="main-up">{{.Name}}</div>
           <div class="movie-box">
             <div class="left-content">
               <span class="text"></span>
             </div>
             <div class="right-content">
+              {{ range .Movies}}
               <div class="youtube-box">
-                <button type="button" class="btn btn-primary video" data-toggle="modal" data-target="#exampleModal" data-video="https://www.youtube.com/embed/_3W5C3bTbUA">
+                <button type="button" class="btn btn-primary video" data-toggle="modal" data-target="#exampleModal" data-video="https://www.youtube.com/embed/{{ .Url}}">
                   <img src="/stylesheet/play.png" height="60px" width="60px" class="play">
-                  <a type="button" href="https://www.youtube.com/embed/_3W5C3bTbUA" data-video="https://www.youtube.com/embed/_3W5C3bTbUA" data-toggle="modal" data-target="#videoModal" class="youtube-link">
-                    <img src="http://img.youtube.com/vi/_3W5C3bTbUA/hqdefault.jpg" class="youtube-box-image"></img>
+                  <a type="button" href="https://www.youtube.com/embed/_3W5C3bTbUA" data-video="https://www.youtube.com/embed/{{ .Url}}" data-toggle="modal" data-target="#videoModal" class="youtube-link">
+                    <img src="http://img.youtube.com/vi/{{ .Url}}/hqdefault.jpg" class="youtube-box-image"></img>
                   </a>
                 </button>
               </div>
-              <div class="youtube-box">
-                <button type="button" class="btn btn-primary video" data-toggle="modal" data-target="#exampleModal" data-video="https://www.youtube.com/embed/GkqhHEAy1zw">
-                  <img src="/stylesheet/play.png" height="60px" width="60px" class="play">
-                  <a type="button" href="https://www.youtube.com/embed/GkqhHEAy1zw" data-video="https://www.youtube.com/embed/GkqhHEAy1zw" data-toggle="modal" data-target="#videoModal" class="youtube-link">
-                    <img src="http://img.youtube.com/vi/GkqhHEAy1zw/hqdefault.jpg" class="youtube-box-image"></img>
-                  </a>
-                </button>
-              </div>
-              <div class="youtube-box">
-                <button type="button" class="btn btn-primary video" data-toggle="modal" data-target="#exampleModal" data-video="https://www.youtube.com/embed/mY3FOwwKGzI">
-                  <img src="/stylesheet/play.png" height="60px" width="60px" class="play">
-                  <a type="button" href="https://www.youtube.com/embed/mY3FOwwKGzI" data-video="https://www.youtube.com/embed/mY3FOwwKGzI" data-toggle="modal" data-target="#videoModal" class="youtube-link">
-                    <img src="http://img.youtube.com/vi/mY3FOwwKGzI/hqdefault.jpg" class="youtube-box-image"></img>
-                  </a>
-                </button>
-              </div>
+              {{end}}
             </div>
           </div>
+          {{end}}
           </div>
         </content>
     </wrapper>
