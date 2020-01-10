@@ -5,9 +5,12 @@ import (
 	"fmt"
 	"log"
 	"net/http"
+	"os"
 	"text/template"
 
 	_ "github.com/go-sql-driver/mysql"
+	_"github.com/GoogleCloudPlatform/cloudsql-proxy/proxy/dialers/mysql"
+
 )
 
 type Movie struct {
@@ -80,14 +83,25 @@ func Connected() []Category { //2重slice 全件取得
 var db *sql.DB
 
 func ConnectDB() *sql.DB {
-	db, err := sql.Open("mysql", "root:@/your?parseTime=true")
+	var (
+		connectionName = os.Getenv("CLOUDSQL_CONNECTION_NAME")
+		user           = os.Getenv("CLOUDSQL_USER")
+		name           = os.Getenv("CLOUDSQL_DATABASE_NAME")
+		password       = os.Getenv("CLOUDSQL_PASSWORD") // NOTE: password may be empty
+	)
+
+	var err error
+	// db, err = sql.Open("mysql", fmt.Sprintf("%s:%s@cloudsql(%s)/", user, password, connectionName))
+
+	var dbopenstring = user + ":" + password + "@unix(/cloudsql/" + connectionName + ")/" + name + "?parseTime=true"
+	// var dbopenstring = user + ":"+ password + "@cloudsql("+connectionName+")/"+name
+
+	// user:password@unix(/cloudsql/INSTANCE_CONNECTION_NAME)/dbname
+
+	db, err = sql.Open("mysql", dbopenstring)
 
 	if err != nil {
 		log.Fatalf("Could not open db: %v", err)
-	}
-
-	if err != nil {
-		log.Fatal(err)
 	}
 	return db
 }
