@@ -8,9 +8,8 @@ import (
 	// "os"
 	"text/template"
 
+	_ "github.com/GoogleCloudPlatform/cloudsql-proxy/proxy/dialers/mysql"
 	_ "github.com/go-sql-driver/mysql"
-	_"github.com/GoogleCloudPlatform/cloudsql-proxy/proxy/dialers/mysql"
-
 )
 
 type Movie struct {
@@ -83,7 +82,6 @@ func Connected() []Category { //2重slice 全件取得
 var db *sql.DB
 
 func ConnectDB() *sql.DB {
-<<<<<<< HEAD
 	// var (
 	// 	connectionName = os.Getenv("CLOUDSQL_CONNECTION_NAME")
 	// 	user           = os.Getenv("CLOUDSQL_USER")
@@ -100,7 +98,6 @@ func ConnectDB() *sql.DB {
 	// user:password@unix(/cloudsql/INSTANCE_CONNECTION_NAME)/dbname
 
 	// db, err = sql.Open("mysql", dbopenstring)
-
 
 	db, err := sql.Open("mysql", "root:@/your?parseTime=true")
 
