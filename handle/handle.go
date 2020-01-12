@@ -5,11 +5,7 @@ import (
 	"fmt"
 	"log"
 	"net/http"
-<<<<<<< HEAD
 	// "os"
-=======
-	"os"
->>>>>>> origin/master
 	"text/template"
 
 	_ "github.com/go-sql-driver/mysql"
