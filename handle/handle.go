@@ -4,9 +4,8 @@ import (
 	"net/http"
 
 	"text/template"
-
-	_ "github.com/GoogleCloudPlatform/cloudsql-proxy/proxy/dialers/mysql"
-	_ "github.com/go-sql-driver/mysql"
+	// 	_ "github.com/GoogleCloudPlatform/cloudsql-proxy/proxy/dialers/mysql"
+	// 	_ "github.com/go-sql-driver/mysql"
 )
 
 type Movie struct {
