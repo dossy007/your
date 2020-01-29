@@ -6,18 +6,6 @@ import (
 	"text/template"
 )
 
-// type Movie struct {
-// 	ID         int
-// 	Url        string
-// 	CategoryID int
-// }
-
-// type Category struct {
-// 	ID     int
-// 	Name   string
-// 	Movies []Movie
-// }
-
 func Showindex(w http.ResponseWriter, r *http.Request) {
 	tem, _ := template.ParseFiles("index.html")
 
